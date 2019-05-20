@@ -1,5 +1,3 @@
-<img src="http://imgur.com/1ZcRyrc.png" style="float: left; margin: 15px; height: 80px">
-
 # Training a Classifier Using Text Data Scraped from Reddit's API
 
 # Problem Statement
