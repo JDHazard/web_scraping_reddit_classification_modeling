@@ -1,10 +1,16 @@
-# Training a Classifier Using Text Data Scraped from Reddit's API
+# The Comics Zone: Training a Classifier Using Text Data Scraped from Reddit's API
 
-# Problem Statement
+## Table of Contents
+
+* [Problem Statement](#user-content-problem-statement)
+* [Executive Summary](#user-content-executive-summary)
+* [Conclusions and Recommendations](#user-content-conclusions-and-recommendations)
+
+## Problem Statement
 
 The goal of our project is to train a classifier using data scraped from two subreddit's using Reddit's API. Classifier models that priviledge NLP processes, such as Naive Bayes and simple Logistic Regression will be developed along with a Voting Classifier which will 'vote' based on Random Forest Classifier, AdaBoost Classifier, Gradient Boosting Classifer, and a Logistic Regression Classifier. Preprocessing and exploratory data analysis will utilize Count Vectorizer, Tfidf Vectorizer. Model success will be determined using built-in scores for each model by percentage. Our baseline is the percentage of each category before model fit. The scope of the project is limited by the amount of text data available in each subreddit. Our project has value to anyone looking to use text data to classify social media posts based solely on the text in the post. 
 
-# Executive Summary
+## Executive Summary
 
 We were tasked to choose two different subreddits for this Natural Language Processing (NLP) challenge. Our models were trained to predict whether or not new text data would fit into one or the other subreddits. I choose two of my passions: The Classic Twilight Zone Series and Comic Books. My intuition and experince tell me that there will be some crossover terms between each subreddit particulary because a new interation of The Twilight Zone began on April 1st, 2019. Also, the comic book subreddit is a much broader topic and will include some crossover terminology. 
 
@@ -30,20 +36,14 @@ Comic books have been part of the [American](https://en.wikipedia.org/wiki/Histo
     
     **Subscribers:** 849k True Believers 1k Skrull (850 members)
     
-    **Top All-Time Post:** 'Representation is so important'
-
-
-
-# Contents:
-
-- [Data](http://localhost:8889/tree/data)
-- [Notebooks](http://localhost:8889/tree/notebooks)
-- [Presentation Slides](http://localhost:8889/tree/presentation)
-
+    **Top All-Time Post:** 'Representation is so important' 
 
 ## Conclusions and Recommendations:
 
-#### Data was collected using a provided query push/shift function which is fully explained in the respective notebook. Non-text data was deemed extraneous and dropped from both datasets. Text was lemmatized, or parsed, using both RegexpTokenizer and WordNetLemmatizer and contractions dropped along with the word 'remove'. The Twilight Zone dataframe and Comic Book dataframe were then concatenated. Cleaned CSV's were saved as the appropriate files. 
-#### Null values were examined imputed during the vectroizing and analysis phase using subject knowledge. CountVectorizer and TfidfVectorizer were used to lemmatize our text data and analyse our corpus parsed out as both 3 to 5 word phrases and 1 to 2 word phrases. Ultimately, focusing on one or two words in each dataset was ideal for classification modeling. 
-#### Our Naive Bayes model, as explained in the notebook and scored at 98% & 97%, had a very low bias and low variance with only a 1% difference in training and testing models. Our Voting Classifier model, as explained in the notebook, had a slightly higher variance at 3% which indicates a slight overfitting. A Random Forest Classifier model, fitted immediately after the Voting Classifier, performed fairly poorly with a very high training score at 99.28% but a testing score of 94.50%, indicating an overfit model. 
-#### The model best suited for NLP is Naive Bayes in this instance. Although clients may prefer a high perfoming model, such as our Random Forest Classifier, as a data scientist I would recommend caution when using it on unseen data. A robust model, like our Naive Bayes one, is a consistent classifier of text data. As with any NLP project, more data could be collected over time and/or the incorporation of reddit comments could be added to complicate our models. 
+Data was collected using a provided query push/shift function which is fully explained in the respective notebook. Non-text data was deemed extraneous and dropped from both datasets. Text was lemmatized, or parsed, using both RegexpTokenizer and WordNetLemmatizer and contractions dropped along with the word 'remove'. The Twilight Zone dataframe and Comic Book dataframe were then concatenated. Cleaned CSV's were saved as the appropriate files. 
+
+Null values were examined imputed during the vectroizing and analysis phase using subject knowledge. CountVectorizer and TfidfVectorizer were used to lemmatize our text data and analyse our corpus parsed out as both 3 to 5 word phrases and 1 to 2 word phrases. Ultimately, focusing on one or two words in each dataset was ideal for classification modeling. 
+
+Our Naive Bayes model, as explained in the notebook and scored at 98% & 97%, had a very low bias and low variance with only a 1% difference in training and testing models. Our Voting Classifier model, as explained in the notebook, had a slightly higher variance at 3% which indicates a slight overfitting. A Random Forest Classifier model, fitted immediately after the Voting Classifier, performed fairly poorly with a very high training score at 99.28% but a testing score of 94.50%, indicating an overfit model. 
+ 
+The model best suited for NLP is Naive Bayes in this instance. Although clients may prefer a high perfoming model, such as our Random Forest Classifier, as a data scientist I would recommend caution when using it on unseen data. A robust model, like our Naive Bayes one, is a consistent classifier of text data. As with any NLP project, more data could be collected over time and/or the incorporation of reddit comments could be added to complicate our models. 
